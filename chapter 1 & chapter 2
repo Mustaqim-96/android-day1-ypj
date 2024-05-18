@@ -1,0 +1,251 @@
+// Chapter 1
+fun main() {
+    println("Hello Android")
+    
+    // Creating variable
+    val x = 1
+    val y = 3
+    
+    println(x)
+    
+    val z = x+y
+    println(z)
+    
+    // Constant vs Variable
+    var name = "Mustaqim"
+    println(name)
+    
+    var myName = "Mustaqim"
+    myName = "Mustaqim Musthafa"
+    println(myName)
+    
+    // Data Type
+    // String untuk character or ayat
+    var address:String = "Damansara Damai"
+    println(address)
+    
+    // Char untuk single huruf
+    var jantina:Char = 'L'
+    println(jantina)
+    
+    // Operation
+    // +
+    var message = "My name is " + myName
+    println(message)
+    
+    // String Interpolation
+    // $ is for cari variable yang sedia ada
+    var anotherMessage = "My name is $name and I live in $address"
+    println(anotherMessage)
+    
+    
+    // Number
+    var num1:Int = 9
+    var num2:Int = 5 
+    
+    var sum:Int = num1 + num2
+    println(sum)
+    
+    
+    // Operasi 
+    var minus = num1 - num2
+    println(minus)
+   
+    var product = num1 * num2
+    println(product)
+   
+    var division = num1 / num2
+    println(division)
+   
+    var modulo = num1 % num2
+   println(modulo)
+   
+   
+    // Boolean operation && (AND), || (OR), ! (Reverse)
+   
+    var eaten = true
+    var tired:Boolean = false 
+    
+    println(eaten && tired)
+    println(eaten || tired)
+    println(!eaten)
+    
+    
+    // Nullable
+    var profession = null
+    
+    var newProfession:String? = null
+    println(newProfession)
+    println(profession)
+    
+    
+    // Array
+    var scores = arrayOf(70,90,100,120,80,20)
+    
+    println(scores[0])
+    println(scores[1])
+    println(scores.size)
+
+
+
+
+  
+    //Chapter 2
+    
+    //Control flow
+    var myAge = 16
+    
+    if (myAge < 18){ 
+        println("You are underage")
+    }
+    println("The End")
+    
+    if (myAge < 18){
+        println("You are underage")
+    }
+    else {
+        println("You can watch the movie")
+    }
+
+
+    // if else
+    if (myAge <13) {
+        println("You cannot watch the movie")
+    }
+    else if (myAge <18) {
+        println("You can watch the movie with parent (PG)")
+    }
+    else {
+        println("You can watch the movie")
+    }
+    
+    
+   // if banyak option
+   var childAge = 17 
+   var parent = true
+    
+   if (childAge <13) {
+       println("You can't watch the movie")
+   }
+   else if (childAge < 18 && parent == false) {
+       println("You can't watch the movie")
+   }
+   else if (childAge > 18 && parent == true) {
+       println("You can watch the movie")
+   }
+   else {
+       println("You can watch the movie")
+   }
+   
+   
+   // Another option with OR
+   if (childAge < 13 || childAge < 18 && parent == false) {
+       println("You cannot watch the movie")
+   }
+   else {
+       println("You can watch the movie")
+   }
+  
+   
+   // When
+   var size = 1
+   var price = 0
+    
+   when (size) {
+       1 -> price = 5
+       2 -> price = 7 
+       3 -> price = 10 
+       else -> println("We don't support the size")
+   }
+   println(price)
+   
+   
+   // Loop
+   println("Menaik")
+   for (i in 0..5){
+       println("i=$i")
+   }
+   
+   println("Menurun")
+   for (i in 5 downTo 0){
+       println("i=$i")
+   }
+   
+   println("Menaik tambah 2")
+   for (i in 0..5 step 2){
+       println("i=$i")
+   }
+   
+   println("Munurun menurun 2")
+   for (i in 5 downTo 0 step 2){
+       println("i=$i")
+   }
+   
+   
+   // For item in Array
+   var languages = arrayOf("Ruby","Phyton","Kotlin","Java")
+   for (item in languages) {
+       println(item)
+   }
+   
+   
+   // While
+   var x1 = 1
+   while (x1 <= 5){
+       println("x1 = $x1")
+       x1++       
+   }
+   
+   // Do while
+   var x2 = 30
+    do {
+        println("x2 = $x2")
+        x2++
+    }
+    while (x2 <= 5)
+    
+    // Break
+    var x3 = 1
+    do{
+        println("x3 = $x3")
+        x3++
+        if (x3 == 3) break
+    }
+    while (x3 <= 5)
+    
+    // Continue
+    var x4 = 0 
+    do {
+        x4++
+        if (x4==3) {continue}
+        println("x4=$x4")
+    }
+    while (x4 <= 5)
+    
+    sayHello() 
+    sayGoodbye("Mustaqim")
+    
+    println(sum(3,4))
+    println(calculateBmi(170.0,80.0))
+
+}
+
+// Function
+fun sayHello(){
+    println("Hello World")
+}
+
+// Function with argument
+fun sayGoodbye(name:String){
+    println("Goodbye $name");
+}
+
+// Function with return
+fun sum(a:Int, b:Int):Int {
+    return a+b
+}
+
+//2 argurement
+fun calculateBmi(height:Double, weight:Double): Double{
+    return weight / ((height/100) * (height/100))
+}
